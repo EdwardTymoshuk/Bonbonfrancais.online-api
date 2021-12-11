@@ -9,11 +9,11 @@ require('dotenv/config')
 dotenv.config() 
 
 //import Routes
-// const caseRoute = require('./routes/cases')
 const authRoute = require('./routes/users')
 const feedbackRoute = require('./routes/feedback')
 const feedbackElementRoute = require('./routes/feedbackElement')
-const PORT = process.env.PORT || 3001 || 80
+const PORT = process.env.PORT || 3001
+const HOST = '0.0.0.0';
 
 //Middlewares
 app.use(bodyParser.json())
@@ -40,6 +40,6 @@ process.env.DB_CONNECTION,
 () => console.log('Connected to DB!')
 )
 
-app.listen(PORT, () => {
+app.listen(PORT, HOST, () => {
     console.log('Server has been started on port ' + PORT)
 })
