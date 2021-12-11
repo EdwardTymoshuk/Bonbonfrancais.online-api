@@ -12,13 +12,14 @@ dotenv.config()
 const authRoute = require('./routes/users')
 const feedbackRoute = require('./routes/feedback')
 const feedbackElementRoute = require('./routes/feedbackElement')
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 5000
 const HOST = '0.0.0.0';
 
 //Middlewares
 app.use(bodyParser.json())
 app.use(express.json())
 app.use(cors())
+
 //Route middlewares
 app.use('/admin-panel', authRoute)
 app.use('/feedback', feedbackRoute)
