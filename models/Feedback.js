@@ -18,9 +18,9 @@ const FeedbackSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    photo: {
-        type: String,
-        default: '../img/feedback-photo-1.jpeg'
+    date: {
+        type: Date,
+        default: Date.now()
     },
     accepted: {
         type: Boolean,
