@@ -19,7 +19,8 @@ router.post('/', async (req, res) => {
         email: req.body.email,
         country: req.body.country,
         feedback: req.body.feedback,
-        photo: req.body.photo
+        photo: req.body.photo,
+        accepted: req.body.accepted
     })
     try {
         const savedFeedback = await feedbackElement.save();
@@ -55,9 +56,11 @@ router.post('/:id', async (req, res) => {
                     email: req.body.email,
                     country: req.body.country,
                     feedback: req.body.feedback,
-                    photo: req.body.photo
+                    photo: req.body.photo,
+                    accepted: req.body.accepted
                 }
-            });
+            })
+            console.log(updatedFeedback)
         res.json(updatedFeedback);
     } catch (err) {
         res.sendStatus(400);
