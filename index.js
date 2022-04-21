@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
     res.send('DB')
 })
 
-//connect to DB
+//connect to DB 
 mongoose.connect(
 process.env.DB_CONNECTION,
 {
